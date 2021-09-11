@@ -1,0 +1,64 @@
+﻿@page
+@model DiceRoller.Pages.DiceRollerModel
+@{
+    int randomNumber = new Random().Next(1, 7);
+    int winNum = new Random().Next(1, 7);
+    int diff = winNum - randomNumber;
+    diff = Math.Abs(diff);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        DiceRoller
+    </title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:whitesmoke;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm text-center">
+                <h1 class="display-4 mb-5">Try you luck in the Dice Game !!!</h1>
+                <form class="form-group">
+                    <button type="submit" class="btn-outline-primary btn-lg">Click here to Roll The Dice</button>
+                </form>
+                <div class="row row-padding mt-5 mb-5">
+                    <table class="table table-striped" width="90%" align="center" border="1">
+                        <tr align="center">
+                            <td>
+                                <h3 class="display-5">Your Dice</h3>
+                            </td>
+                            <td>
+                                <h3 class="display-5">Winning Number</h3>
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                <h3 class="display-6"> You rolled a @randomNumber</h3>
+                            </td>
+                            <td>
+                                <h3 class="display-6">Winning Random number is @winNum</h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        @if (randomNumber == winNum)
+        {
+            <div class="col-sm text-center">
+                <h1 class="alert alert-success">Congratulations !! You Won</h1>
+            </div>
+        }
+        else
+        {
+            <div class="col-sm text-center">
+                <h1 class="alert alert-danger">You Loose !! Try Again</h1>
+            </div>
+            <div class="col-sm text-center">
+                <h3 class="display-6"><strong>Your Guess was @diff off !!!</strong></h3>
+            </div>
+        }
+    </div>
+</body>
+</html>
