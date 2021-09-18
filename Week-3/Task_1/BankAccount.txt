@@ -1,0 +1,12 @@
+public class BankAccount
+{
+    public int AccountNumber { get; set; }
+    public decimal CurrentBalance { get; set; }
+    public string AccountName { get; set; }
+    public decimal CreditLimit { get; set; }
+    public bool CreditCardLinked { get; set; }
+    public AccountHolder AccountOwner { get; set; }
+    public int AccountOwnerId { get; set; }
+    public int BankAccountId { get; set; }
+    
+}

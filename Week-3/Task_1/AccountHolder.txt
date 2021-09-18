@@ -1,0 +1,11 @@
+public class AccountHolder
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public bool IsSeniorCitizen { get; set; }
+    public long PhoneNumber { get; set; }
+    public int AccountHolderId { get; set; }
+    public List<BankAccount> BankAccounts { get; set; }
+    
+}
