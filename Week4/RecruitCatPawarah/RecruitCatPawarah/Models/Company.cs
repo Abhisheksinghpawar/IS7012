@@ -19,7 +19,7 @@ namespace RecruitCatPawarah.Models
 
         [DisplayName("Open Position")]
         [Required(ErrorMessage = "Position is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter Position Name")]
+        [StringLength(25, MinimumLength = 1, ErrorMessage = "Enter Position Name")]
         public string OpenPosition { get; set; }
 
         [DisplayName("Min Salary")]
@@ -35,7 +35,7 @@ namespace RecruitCatPawarah.Models
         public DateTime? StartDate { get; set; }
 
         [Required(ErrorMessage = "Location is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter Location")]
+        [StringLength(13, MinimumLength = 3, ErrorMessage = "Enter Location")]
         public string Location { get; set; }
 
         [DisplayName("Provides Sponsorship")]
@@ -57,13 +57,13 @@ namespace RecruitCatPawarah.Models
 
         [DisplayName("Email Address")]
         [Required(ErrorMessage = "Email is Required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter valid Email Address")]
+        [StringLength(20, MinimumLength = 10, ErrorMessage = "Enter valid Email Address")]
         [EmailAddress]
         public string EmailAddress { get; set; }
 
         [DisplayName("Website Url")]
         [Required(ErrorMessage = "Website Url is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter your website url")]
+        [StringLength(20, MinimumLength = 10, ErrorMessage = "Enter your website url")]
         [Url]
         public string WebsiteUrl { get; set; }
 

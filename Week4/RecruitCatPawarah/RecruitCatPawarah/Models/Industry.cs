@@ -14,7 +14,7 @@ namespace RecruitCatPawarah.Models
 
         [DisplayName("Industry Name")]
         [Required(ErrorMessage = "Industry Name is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter your Industry Name")]
+        [StringLength(13, MinimumLength = 5, ErrorMessage = "Enter your Industry Name")]
         public string IndustryName { get; set; }
 
         [DisplayName("Share Price")]

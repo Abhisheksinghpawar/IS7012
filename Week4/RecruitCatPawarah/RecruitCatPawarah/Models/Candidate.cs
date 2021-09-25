@@ -14,12 +14,12 @@ namespace RecruitCatPawarah.Models
 
         [DisplayName("First Name")]
         [Required(ErrorMessage = "Name is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter your first name")]
+        [StringLength(13, MinimumLength = 3, ErrorMessage = "Enter your first name")]
         public string FirstName { get; set; }
 
         [DisplayName("Last Name")]
         [Required(ErrorMessage = "Last Name is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter your last name")]
+        [StringLength(13, MinimumLength = 3, ErrorMessage = "Enter your last name")]
         public string LastName { get; set; }
 
         [DisplayName("Target Salary")]
@@ -31,7 +31,7 @@ namespace RecruitCatPawarah.Models
         public DateTime? StartDate { get; set; }
 
         [Required(ErrorMessage = "Gender is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter gender M/F/O")]
+        [StringLength(13, MinimumLength = 1, ErrorMessage = "Enter gender M/F/O")]
         public string Gender { get; set; }
 
         [DisplayName("Highest Qualification")]
@@ -40,7 +40,7 @@ namespace RecruitCatPawarah.Models
         public string HighestQualification { get; set; }
 
         [DisplayName("Years Worked Outside US")]
-        [Range(50000, 100000, ErrorMessage = "Enter Valid Outside US Experience")]
+        [Range(0, 100, ErrorMessage = "Enter Valid Outside US Experience")]
         public int? YearsWorkedOutsideUS { get; set; }
 
         [DisplayName("Company Associated")]

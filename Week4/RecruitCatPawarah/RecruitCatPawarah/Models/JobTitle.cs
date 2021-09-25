@@ -13,7 +13,7 @@ namespace RecruitCatPawarah.Models
         public int JobTitleId { get; set; }
 
         [Required(ErrorMessage = "Title is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter valid Title")]
+        [StringLength(13, MinimumLength = 4, ErrorMessage = "Enter valid Title")]
         public string Title { get; set; }
 
         [DisplayName("Min Salary")]
@@ -29,9 +29,9 @@ namespace RecruitCatPawarah.Models
 
         [DisplayName("Job Description")]
         [Required(ErrorMessage = "Job description is required")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Enter the Job Description")]
+        [StringLength(50, MinimumLength = 10, ErrorMessage = "Enter the Job Description")]
         public string JobDescription { get; set; }
         
-        public List<Candidate> CandidateAssociate { get; set; }
+        public List<Candidate> CandidatesAssociate { get; set; }
     }
 }
