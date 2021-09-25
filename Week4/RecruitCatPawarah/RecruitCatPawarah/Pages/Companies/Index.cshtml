@@ -1,0 +1,102 @@
+﻿@page
+@model RecruitCatPawarah.Pages.Companies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Companies</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].OpenPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].MinSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].MaxSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].ProvidesSponsorship)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].OperatesOutsideUS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].YearFounded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].IndustryAssociated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].WebsiteUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].ContactNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Company) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProvidesSponsorship)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperatesOutsideUS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearFounded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndustryAssociated.IndustryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebsiteUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CompanyId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CompanyId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CompanyId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,76 @@
+﻿@page
+@model RecruitCatPawarah.Pages.Candidates.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create a new Candidate</h1>
+
+<h4>Candidate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Candidate.FirstName" class="control-label"></label>
+                <input asp-for="Candidate.FirstName" class="form-control" />
+                <span asp-validation-for="Candidate.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.LastName" class="control-label"></label>
+                <input asp-for="Candidate.LastName" class="form-control" />
+                <span asp-validation-for="Candidate.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.TargetSalary" class="control-label"></label>
+                <input asp-for="Candidate.TargetSalary" class="form-control" />
+                <span asp-validation-for="Candidate.TargetSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.StartDate" class="control-label"></label>
+                <input asp-for="Candidate.StartDate" class="form-control" />
+                <span asp-validation-for="Candidate.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.Gender" class="control-label"></label>
+                <input asp-for="Candidate.Gender" class="form-control" />
+                <span asp-validation-for="Candidate.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.HighestQualification" class="control-label"></label>
+                <input asp-for="Candidate.HighestQualification" class="form-control" />
+                <span asp-validation-for="Candidate.HighestQualification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.YearsWorkedOutsideUS" class="control-label"></label>
+                <input asp-for="Candidate.YearsWorkedOutsideUS" class="form-control" />
+                <span asp-validation-for="Candidate.YearsWorkedOutsideUS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.CompanyAssociatedId" class="control-label"></label>
+                <select asp-for="Candidate.CompanyAssociatedId" class ="form-control" asp-items="ViewBag.CompanyAssociatedId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.JobTitleAssociateId" class="control-label"></label>
+                <select asp-for="Candidate.JobTitleAssociateId" class ="form-control" asp-items="ViewBag.JobTitleAssociateId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.IndustryAssociatedId" class="control-label"></label>
+                <select asp-for="Candidate.IndustryAssociatedId" class ="form-control" asp-items="ViewBag.IndustryAssociatedId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
